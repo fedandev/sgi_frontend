@@ -1,0 +1,46 @@
+<div class="row">
+        <div class="col-xl-6">
+            <!-- sample panel -->
+            <smart-panel id="panel-1">
+                <h2 panelTitle>
+                    Ajustes <span class="fw-300"><i>{{ titulo }} </i></span>
+                </h2>
+                <div panelContent >
+                    <form (ngSubmit) = "create()">
+                        <div class="form-group row">
+                            <label for="name" class="col-form-label col-sm-2">Nombre</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" [(ngModel)]="ajuste.name" name="name">           
+                            </div>        
+                        </div>
+                      
+                      <div class="form-group row">
+                            <label for="value" class="col-form-label col-sm-2">Valor</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" [(ngModel)]="ajuste.value" name="value">           
+                            </div>        
+                        </div>
+        
+                        <div class="form-group row">
+                            <label for="description" class="col-form-label col-sm-2">Descripcion</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" [(ngModel)]="ajuste.description" name="description">           
+                            </div>        
+                        </div>
+
+                        
+                        <div class="form-group row">                           
+                            <div class="col-sm-6">
+                               <button class="btn btn-primary" type="submit" role="button">Crear</button>
+                            </div> 
+                            <button [routerLink]="['/components/ajustes']" type="button"
+                                    class="btn btn-outline-secondary">
+                                    Regresar
+                            </button>       
+                        </div>
+
+                    </form>
+                </div>
+            </smart-panel>
+        </div>
+    </div>

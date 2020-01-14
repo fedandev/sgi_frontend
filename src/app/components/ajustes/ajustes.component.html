@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-xl-6">
+        <!-- sample panel -->
+        <smart-panel id="panel-1">
+            <h2 panelTitle>
+                Ajustes <span class="fw-300"><i>Mantenimiento</i></span>
+            </h2>
+            <div panelContent >
+                    <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button [routerLink]="['/components/ajustes/form']"
+                                class="btn btn-primary"
+                                type="button" name="button">
+                                <span class="fal fa-plus"></span> Nuevo
+                        </button>
+                    </div>
+                    </div>
+                   
+                    <table class="table">
+                        <tr>
+                            <th>Id</th>        
+                            <th>Nombre</th>     
+                            <th>Valor</th>  
+                            <th>Descripcion</th>                           
+                            <th>Acciones</th>   
+                        </tr>
+                        <tr *ngFor="let ajuste of ajustes">        
+                            <td>{{ ajuste.id }}</td>        
+                            <td>{{ ajuste.name }}</td>      
+                            <td>{{ ajuste.value }}</td>        
+                            <td>{{ ajuste.description }}</td>  
+                            
+                            <td>                                
+                                <a (click)="delete(ajuste.id)" class="btn btn-danger btn-sm btn-icon">
+                                    <i class="fal fa-times"></i>
+                                </a>
+                                <a (click)="update(ajuste.id)" class="btn btn-default btn-sm btn-icon">
+                                        <i class="fal fa-pen-alt"></i>
+                                </a>
+                                <a (click)="show(ajuste.id)" class="btn btn-default btn-sm btn-icon">
+                                    <i class="fal fa-binoculars"></i>
+                                </a>                                
+                            </td>      
+                        </tr>   
+                        
+                    </table> 
+            </div>
+        </smart-panel>
+    </div>
+</div>
+    
